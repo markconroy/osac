@@ -1,0 +1,162 @@
+:root {
+  --spacing: 1rem;
+  --spacing-large: 1.5rem;
+  --spacing-larger: 2rem;
+  --spacing-largest: 3rem;
+  --font-primary: "Roboto", serif;
+  --color-white: #ffffff;
+  --color-black: #333;
+  --color-accent: #0800ef;
+  --color-accent-light: #dbdafc;
+  --transition-time: .3s;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin-top: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-primary);
+  color: var(--color-black);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-accent);
+}
+
+h2 {
+  font-size: clamp(2rem, 8vw, 3rem);
+  text-shadow: 2px 2px 2px var(--color-white);
+}
+
+iframe {
+  max-width: 100%;
+}
+
+.header {
+  /*  */
+}
+
+.footer {
+  margin-top: auto;
+}
+
+.layout-contained {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.padding-horizontal {
+  padding-left: var(--spacing);
+}
+
+.slice {
+  padding-top: var(--spacing-largest);
+  padding-bottom: var(--spacing-largest);
+}
+.slice:nth-of-type(odd) {
+  background-color: var(--color-accent-light);
+}
+
+@media screen and (min-width: 768px) {
+  .slice__inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .slice__first,
+  .slice__second {
+    flex-basis: 50%;
+  }
+  .slice__image img {
+    transform: rotate(-1deg);
+  }
+  .committee__member,
+  .affiliation {
+    flex-basis: calc(25% - var(--spacing));
+  }
+}
+
+.slice__second {
+  padding: var(--spacing-largest);
+}
+
+.slice__image img {
+  border: 8px solid var(--color-white);
+  outline: 4px solid var(--color-black);
+}
+
+.slice__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slice--affiliations h2,
+.slice--faqs h2,
+.slice--committee h2 {
+  width: 100%;
+}
+
+.affiliations,
+.committee {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: var(--spacing);
+  padding-left: 0;
+  text-align: center;
+  list-style: none;
+}
+
+.committee__member-position {
+  padding: var(--spacing);
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.committee__member-name {
+  padding: var(--spacing);
+  border: 1px solid var(--color-accent);
+  border-top: 0;
+}
+
+.faqs {
+  width: 100%;
+  list-style: none;
+  padding-left: 0;
+}
+
+.faq__answer {
+  margin-bottom: var(--spacing);
+  border-bottom: 1px solid var(--color-black);
+}
+
+.faq__question {
+  display: inline-flex;
+}
+
+.faq__answer .faq__icon {
+  transition: var(--transition-time);
+}
+.faq__answer[open] .faq__icon {
+  color: var(--color-white);
+}
+
