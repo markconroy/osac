@@ -186,6 +186,7 @@ iframe {
   position: fixed;
   bottom: 0;
   left: 5%;
+  z-index: 100;
   width: 90%;
   min-height: 50vh;
   display: flex;
