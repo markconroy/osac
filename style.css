@@ -23,6 +23,7 @@ body {
   flex-direction: column;
   margin: 0;
   min-height: 100vh;
+  line-height: 1.5;
   font-family: var(--font-primary);
   color: var(--color-black);
 }
@@ -38,12 +39,16 @@ h3,
 h4,
 h5,
 h6 {
+  line-height: 1.3;
+  text-shadow: 2px 2px 2px var(--color-white);
   color: var(--color-accent);
 }
 
+h1 {
+  font-size: clamp(3rem, 10vw, 4rem);
+}
 h2 {
   font-size: clamp(2rem, 8vw, 3rem);
-  text-shadow: 2px 2px 2px var(--color-white);
 }
 
 iframe {
@@ -51,7 +56,32 @@ iframe {
 }
 
 .header {
-  /*  */
+  position: relative;
+  padding-top: var(--spacing-largest);
+  padding-bottom: var(--spacing-largest);
+  border-bottom: 4px solid var(--color-black);
+}
+
+.header::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: url('assets/photos/divertop5.jpg') no-repeat right center;
+  background-size: contain;
+  opacity: .4;
+}
+
+.header__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 50vh;
 }
 
 .footer {
@@ -65,33 +95,17 @@ iframe {
 }
 
 .padding-horizontal {
+  padding-right: var(--spacing);
   padding-left: var(--spacing);
 }
 
 .slice {
   padding-top: var(--spacing-largest);
   padding-bottom: var(--spacing-largest);
+  border-bottom: 4px solid var(--color-black);
 }
 .slice:nth-of-type(odd) {
   background-color: var(--color-accent-light);
-}
-
-@media screen and (min-width: 768px) {
-  .slice__inner {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .slice__first,
-  .slice__second {
-    flex-basis: 50%;
-  }
-  .slice__image img {
-    transform: rotate(-1deg);
-  }
-  .committee__member,
-  .affiliation {
-    flex-basis: calc(25% - var(--spacing));
-  }
 }
 
 .slice__second {
@@ -101,6 +115,7 @@ iframe {
 .slice__image img {
   border: 8px solid var(--color-white);
   outline: 4px solid var(--color-black);
+  box-shadow: 0px 4px 10px 2px var(--color-black);
 }
 
 .slice__text {
@@ -125,6 +140,11 @@ iframe {
   text-align: center;
   list-style: none;
 }
+
+.committee__member,
+  .affiliation {
+    flex-basis: calc(50% - var(--spacing));
+  }
 
 .committee__member-position {
   padding: var(--spacing);
@@ -160,3 +180,37 @@ iframe {
   color: var(--color-white);
 }
 
+@media screen and (min-width: 768px) {
+  .header::before {
+    /* opacity: 1; */
+  }
+
+  .slice__inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .slice--image:nth-child(odd) .slice__inner {
+    flex-direction: row-reverse;
+  }
+
+  .slice__first,
+  .slice__second {
+    flex-basis: 50%;
+  }
+  
+  .slice__second {
+    padding-top: 0;
+  }
+  
+  .slice__image img {
+    transform: rotate(-1deg);
+  }
+  .slice--image:nth-child(odd) .slice__image img {
+    transform: rotate(1deg);
+  }
+
+  .committee__member,
+  .affiliation {
+    flex-basis: calc(25% - var(--spacing));
+  }
+}
