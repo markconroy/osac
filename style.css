@@ -107,7 +107,7 @@ iframe {
   min-height: 50vh;
 }
 
-.header__logo {
+.header__logo img {
   max-width: 300px;
 }
 
