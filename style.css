@@ -111,6 +111,24 @@ iframe {
   max-width: 300px;
 }
 
+.header__menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing);
+  padding-left: 0;
+  list-style: none;
+}
+
+.header__menu a {
+  color: var(--color-accent-2);
+  text-decoration: none;
+}
+
+.header__menu a:focus,
+.header__menu a:hover {
+  text-decoration: underline;
+}
+
 .footer {
   margin-top: auto;
 }
