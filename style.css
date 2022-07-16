@@ -120,9 +120,15 @@ iframe {
   list-style: none;
 }
 
+.header__menu {
+  padding-top: var(--spacing);
+  padding-bottom: var(--spacing);
+  border-top: 1px solid var(--color-black);
+  border-bottom: 1px solid var(--color-black);
+}
 .header__menu a {
-  color: var(--color-accent-2);
   text-decoration: none;
+  color: var(--color-accent-2);
 }
 
 .header__menu a:focus,
