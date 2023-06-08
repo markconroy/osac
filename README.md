@@ -1,2 +1,2 @@
 # osac
-Offaly Sub Aqua Club website
+Offaly Sub Aqua Club website.
