@@ -202,11 +202,13 @@ iframe {
 .committee__member-position {
   padding: var(--spacing);
   background-color: var(--color-accent);
+  border: 2px solid var(--color-black);
+  margin-bottom: 0;
 }
 
 .committee__member-name {
   padding: var(--spacing);
-  border: 1px solid var(--color-accent);
+  border: 2px solid var(--color-black);
   border-top: 0;
 }
 
@@ -254,7 +256,8 @@ iframe {
 .cta:hover {
   text-decoration: underline;
   background-color: var(--color-white);
-  color: var(--color-accent);
+  color: var(--color-black);
+  border-color: var(--color-black);
 }
 .cta--alt:focus,
 .cta--alt:hover {
@@ -375,11 +378,11 @@ iframe {
   .slice__second {
     flex-basis: 50%;
   }
-  
+
   .slice__second {
     padding-top: 0;
   }
-  
+
   .slice__image img {
     transform: rotate(-1deg);
   }
